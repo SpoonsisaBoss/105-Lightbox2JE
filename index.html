@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Lightbox Gallery</title>
+    <link rel="stylesheet" href="gallery.css">
+    <link rel="stylesheet" href="lightbox.css">
+    <link rel="stylesheet" href="css/styling.css">
+  </head>
+  <body>
+    <!-- Gallery/Image Code -->
+
+
+    <!-- Lightbox Code -->
+    <div id="lightboxContainer" class="display">
+      <div id="lightboxBackground" class="closer"></div>
+      <img id="lightbox" src="" alt="">
+      <img id='pic1' src="images/Architectural_Illustration_Project2_2021_JEdery.jpg" alt="">
+      <img id='pic2' src="images/LayeredMoviePoster2_2021_JEdery-1.jpg" alt="">
+      <img id='pic3' src="images/MattePaintingProjectFinal_2021_JEdery.jpg" alt="">
+      <span id="lightboxCloser" class="closer">×</span>
+    </div>
+
+    <!-- Lightbox JavaScript -->
+    <script type="text/javascript">
+    let lightboxContainer = document.getElementById('lightboxContainer');
+    let lightboxBackground = document.getElementById('lightboxBackground');
+    let lightbox = document.getElementById('lightbox');
+    let lightboxCloser = document.getElementById('lightboxCloser');
+
+    function openLightbox(){
+      lightboxContainer.classList.add('display');
+      lightbox.src = this.src;
+    }
+
+
+    // let coffeeImage = document.getElementById('coffeeImage');
+    // coffeeImage.onclick = openLightbox;
+
+    let pic1 = document.getElementById('pic1');
+    pic1.onclick = openLightbox;
+    
+    let pic2 = document.getElementById('pic2');
+    pic2.onclick = openLightbox;
+    
+    let pic3 = document.getElementById('pic3');
+    pic3.onclick = openLightbox;
+
+    
+    function closeLightbox(){
+      lightboxContainer.classList.remove('display');
+      lightbox.src = ' ';
+    }
+
+    lightboxBackground.onclick = closeLightbox;
+    lightboxCloser.onclick = closeLightbox;
+
+    </script>
+  </body>
+</html>
